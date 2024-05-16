@@ -14,90 +14,90 @@ This project implements a Rapidly-exploring Random Tree (RRT) planner for a poin
 
 The grid size and obstacle map are defined, where obstacles are manually set within the grid:
 
-matlab
+   ```bash
+   grid_size = 200;
+   obstacle_map = zeros(grid_size, grid_size);
 
-grid_size = 200;
-obstacle_map = zeros(grid_size, grid_size);
-
-obstacle_map(50:70, 50:70) = 1;  % obstacle 1
-obstacle_map(100:120, 100:120) = 1;  % obstacle 2
-obstacle_map(150:170, 150:170) = 1;  % obstacle 3
+   obstacle_map(50:70, 50:70) = 1;  % obstacle 1
+   obstacle_map(100:120, 100:120) = 1;  % obstacle 2
+   obstacle_map(150:170, 150:170) = 1;  % obstacle 3
+   ```
 
 ### Define Start and Goal Regions
 
 The start and goal regions are specified as coordinates within the grid:
 
-matlab
-
-start_region = [10, 10];
-goal_region = [180, 180];
+   ```bash
+   start_region = [10, 10];
+   goal_region = [180, 180];
+   ```
 
 ### RRT Parameters
 
 Parameters for the RRT algorithm, including maximum iterations, step size, and goal bias, are set:
 
-matlab
-
-max_iterations = 1000;
-step_size = 5;
-goal_bias = 0.1;
+   ```bash
+   max_iterations = 1000;
+   step_size = 5;
+   goal_bias = 0.1;
+   ```
 
 ### Tree Initialization
 
 The RRT tree is initialized with the start node:
 
-matlab
-
-tree = struct('nodes', [], 'edges', []);
-tree.nodes = [tree.nodes; start_region];
+   ```bash
+   tree = struct('nodes', [], 'edges', []);
+   tree.nodes = [tree.nodes; start_region];
+   ```
 
 ### RRT Loop
 
 The main loop of the RRT algorithm samples points, extends the tree, and checks for goal reach:
 
-matlab
-
-for i = 1:max_iterations
-    % Sampling, finding nearest node, calculating new node position
-    % Adding new node to tree and checking for goal region
-    % (See full code for detailed implementation)
-end
+   ```bash
+   for i = 1:max_iterations
+       % Sampling, finding nearest node, calculating new node position
+       % Adding new node to tree and checking for goal region
+       % (See full code for detailed implementation)
+   end
+   ```
 
 ### Visualization
 
 Obstacles, the RRT tree, and the path are plotted:
 
-matlab
+   ```bash
+   figure;
+   imshow(obstacle_map, 'InitialMagnification', 'fit');
+   hold on;
+   plot(tree.nodes(:, 1), tree.nodes(:, 2), 'b-');
+   plot(start_region(1), start_region(2), 'go');
+   plot(goal_region(1), goal_region(2), 'ro');
 
-figure;
-imshow(obstacle_map, 'InitialMagnification', 'fit');
-hold on;
-plot(tree.nodes(:, 1), tree.nodes(:, 2), 'b-');
-plot(start_region(1), start_region(2), 'go');
-plot(goal_region(1), goal_region(2), 'ro');
-
-% Path plotting and validation
-% (See full code for detailed implementation)
+   % Path plotting and validation
+   % (See full code for detailed implementation)
+   ```
 
 ### Path Validation
 
 The code includes checks to ensure the path does not intersect any obstacles:
 
-matlab
-
-for i = 1:size(path, 1) - 1
-    if obstacle_map(round(path(i, 1)), round(path(i, 2))) == 1
-        error('Path intersects obstacle');
-    end
-end
+   ```bash
+   for i = 1:size(path, 1) - 1
+       if obstacle_map(round(path(i, 1)), round(path(i, 2))) == 1
+           error('Path intersects obstacle');
+       end
+   end
+   ```
 
 ### Path Length
 
 The length of the found path is printed:
 
-matlab
-
-fprintf('Path length: %f\n', sum(sqrt((path(1:end - 1, 1) - path(2:end, 1)).^2 + (path(1:end - 1, 2) - path(2:end, 2)).^2)));
+   ```bash
+   fprintf('Path length: %f\n', sum(sqrt((path(1:end - 1, 1) - path(2:end, 1)).^2 + (path(1:end - 1, 2) - path(2:end, 2)).^2)));
+   ```
 
 ## Running the Code
 
