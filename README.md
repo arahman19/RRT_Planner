@@ -102,3 +102,9 @@ The length of the found path is printed:
 ## Running the Code
 
 To run the RRT planner, simply execute the MATLAB script provided. Ensure you have MATLAB installed and properly configured to visualize the output.
+
+## Resources
+
+- [RRT Algorithm Overview](https://en.wikipedia.org/wiki/Rapidly_exploring_random_tree)
+- [MATLAB Documentation](https://www.mathworks.com/help/matlab/)
+- [Path Planning Algorithms](https://ieeexplore.ieee.org/document/10064036)
