@@ -3,11 +3,11 @@
 This project implements a Rapidly-exploring Random Tree (RRT) planner for a point robot navigating in a 2D plane with obstacles. The algorithm is designed to find a path from a specified start region to a goal region within a grid, avoiding obstacles along the way.
 ## Features
 
-Obstacle Representation: The environment is represented by a 200x200 grid. Obstacles are indicated by 1s in the grid, while free spaces are indicated by 0s.
-Tree Expansion: The RRT algorithm grows a tree by randomly sampling points in free space, finding the nearest existing node, and extending towards the sampled point.
-Goal Biasing: To expedite convergence, a goal bias is used, where a certain percentage of samples are biased towards the goal region.
-Path Finding: The algorithm tracks the path from the start to the goal once the goal region is reached.
-Visualization: The program plots the obstacles, the RRT tree, and the resulting path from the start to the goal.
+* Obstacle Representation: The environment is represented by a 200x200 grid. Obstacles are indicated by 1s in the grid, while free spaces are indicated by 0s.
+* Tree Expansion: The RRT algorithm grows a tree by randomly sampling points in free space, finding the nearest existing node, and extending towards the sampled point.
+* Goal Biasing: To expedite convergence, a goal bias is used, where a certain percentage of samples are biased towards the goal region.
+* Path Finding: The algorithm tracks the path from the start to the goal once the goal region is reached.
+* Visualization: The program plots the obstacles, the RRT tree, and the resulting path from the start to the goal.
 
 ## Code Overview
 ### Initialize the Environment
