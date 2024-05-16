@@ -1,4 +1,4 @@
-# RRT Planner
+# RRT Planner for Point Robot Navigation
 
 This project implements a Rapidly-exploring Random Tree (RRT) planner for a point robot navigating in a 2D plane with obstacles. The algorithm is designed to find a path from a specified start region to a goal region within a grid, avoiding obstacles along the way.
 ## Features
